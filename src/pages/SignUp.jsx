@@ -49,7 +49,7 @@ const SignUp = () => {
               </div>
               <div className="form-control  relative">
                 <label className="label">
-                  <span className="label-text">Enter Password</span>
+                  <span className="label-text">Enter Your Password</span>
                 </label>
                 <input
                   type={showPW ? "text" : "password"}

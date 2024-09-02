@@ -1,15 +1,18 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 
 const Navbar = () => {
+  const location=useLocation();
+  console.log(location.pathname);
+  const isBannerSection = location.pathname === "/";
   const navLinks = (
     <>
-      <li className="text-lg font-semibold">
+      <li className="text-lg font-semibold hover:text-white">
         <NavLink
           to="/"
           style={({ isActive }) => {
             return {
               fontWeight: isActive ? "bold" : "",
-              color: isActive ? "white" : "black",
+              color:  isActive ? "white" : "#6B7280",
               backgroundColor: isActive ? "#B18B5E" : "",
             };
           }}
@@ -17,27 +20,29 @@ const Navbar = () => {
           Home
         </NavLink>
       </li>
-      <li className="text-lg font-semibold">
+      <li className="text-lg font-semibold hover:text-white">
         <NavLink
           to="/gallery"
           style={({ isActive }) => {
             return {
               fontWeight: isActive ? "bold" : "",
-              color: isActive ? "white" : "black",
+              color:  isActive ? "white" : "#6B7280",
+              hoverColor: "white",
               backgroundColor: isActive ? "#B18B5E" : "",
             };
           }}
+          className=""
         >
           Gallery
         </NavLink>
       </li>
-      <li className="text-lg font-semibold">
+      <li className="text-lg font-semibold hover:text-white">
         <NavLink
           to="/about"
           style={({ isActive }) => {
             return {
               fontWeight: isActive ? "bold" : "",
-              color: isActive ? "white" : "black",
+              color:   isActive ? "white" : "#6B7280",
               backgroundColor: isActive ? "#B18B5E" : "",
             };
           }}
@@ -45,13 +50,13 @@ const Navbar = () => {
           About Artist
         </NavLink>
       </li>
-      <li className="text-lg font-semibold">
+      <li className="text-lg font-semibold hover:text-white">
         <NavLink
           to="/blogs"
           style={({ isActive }) => {
             return {
               fontWeight: isActive ? "bold" : "",
-              color: isActive ? "white" : "black",
+              color:  isActive ? "white" : "#6B7280",
               backgroundColor: isActive ? "#B18B5E" : "",
             };
           }}
@@ -59,10 +64,27 @@ const Navbar = () => {
           Blogs
         </NavLink>
       </li>
+      <li className="text-lg font-semibold hover:text-white">
+        <NavLink
+          to="/contact"
+          style={({ isActive }) => {
+            return {
+              fontWeight: isActive ? "bold" : "",
+              color:  isActive ? "white" : "#6B7280",
+              backgroundColor: isActive ? "#B18B5E" : "",
+            };
+          }}
+        >
+          Contact Us
+        </NavLink>
+      </li>
     </>
   );
+  
   return (
-    <div className="navbar p-0 bg-base-100 px-3 md:px-10">
+    <div  className={`navbar p-0 px-3 md:px-10 ${
+      isBannerSection ? "bg-transparent absolute" : "bg-base-50"
+    }`}>
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

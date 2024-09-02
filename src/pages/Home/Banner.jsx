@@ -1,11 +1,13 @@
+import { Link } from "react-router-dom";
+import { Parallax } from 'react-parallax';
 const Banner = () => {
   return (
-    
-      <div
+    <>
+ <div
         className="hero min-h-screen"
         style={{
           backgroundImage:
-            "url(https://img.daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.webp)",
+            "url(./banner3.jpg)",
         }}
       >
         <div className="hero-overlay bg-opacity-60"></div>
@@ -17,12 +19,23 @@ const Banner = () => {
               excepturi exercitationem quasi. In deleniti eaque aut repudiandae
               et a id nisi.
             </p>
-            <button className="btn btn-primary">Get Started</button>
+            <button className="btn bg-[#B18B5E] text-white text-lg btn-ghost">
+              <Link to="/gallery">
+              Explore Now
+              </Link>
+              </button>
           </div>
         </div>
-      </div>
+      </div>  
+     
+      </>
   
   );
 };
 
 export default Banner;
+{/* <button className="btn bg-[#B18B5E] text-white text-lg btn-ghost">
+<Link to="/gallery">
+Explore Now
+</Link>
+</button> */}
