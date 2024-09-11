@@ -1,11 +1,10 @@
 
 const ExploreCategories = () => {
     return (
-        <div className="my-8 ">
+        <div className="my-16 ">
             <div className="text-center">
-            <p>EXPLORE THE JOURNEY OF CREATIVITY</p>
-            <h1>Discover Our Artistic Categories</h1>
-            <p>Dive into our curated selection of art categories, from the serene strokes of landscape paintings to the vibrant layers of oil and watercolor. Each category offers a unique avenue for expression and discovery.</p>
+            <h1 className="text-[#d23c3f] font-normal px-1 pb-1 text-base md:text-xl">Dive Into Our Artistic Categories</h1>
+            <p className="text-[#34373f] text-2xl px-1 md:text-4xl font-medium max-w-xl mx-auto">Explore each category for unique expression and discovery</p>
             </div>
         </div>
     );
